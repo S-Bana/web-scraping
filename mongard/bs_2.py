@@ -2,7 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 
 
-url = 'https://www.wikipedia.org/'
+# url = 'https://www.wikipedia.org/'
+url = 'https://en.wikipedia.org/wiki/Linus_Torvalds'
 
 response = requests.get(url=url)
 
@@ -25,7 +26,13 @@ content = BeautifulSoup(response.text, 'html.parser')
 # find two or more than values and return first one
 # print(content.find_all(['h1','h2']))
 
-# =find_Attribute==========================================================
+# =find_thing==========================================================
 
-# find a value and return first one, in result get attribute
-print(content.find('h1').attrs)
+# find a value and return first one, in result get attribute, text , ...
+# print(content.find('h1').attrs)
+
+# print(content.find('h1').text)
+
+print(content.find(attrs={"title":"Alan Emtage"}))
+
+
