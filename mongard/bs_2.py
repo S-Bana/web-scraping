@@ -11,6 +11,7 @@ content = BeautifulSoup(response.text, 'html.parser')
 # print source code html
 # print(content)
 
+# =find====================================================================
 # find a value and return first one
 # print(content.find('h1'))
 
@@ -22,4 +23,9 @@ content = BeautifulSoup(response.text, 'html.parser')
 # print(content.find(['h1','h2']))
 
 # find two or more than values and return first one
-print(content.find_all(['h1','h2']))
+# print(content.find_all(['h1','h2']))
+
+# =find_Attribute==========================================================
+
+# find a value and return first one, in result get attribute
+print(content.find('h1').attrs)
