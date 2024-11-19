@@ -34,7 +34,6 @@ content = BeautifulSoup(response.text, 'html.parser')
 
 
 # =find_something==========================================================
-
 # find a value and return first one, in result get attribute, text , ...
 # print(content.find('h1').attrs)
 
@@ -44,17 +43,22 @@ content = BeautifulSoup(response.text, 'html.parser')
 
 
 # =find_something_&_filter_it==========================================================
-
+# return text from first 'h1'
 # print(content.find('h1').text)
 
-# print(len(content.find('h2')))
+# number of 'h2' in source code html
+# print(len(content.find_all('h2')))
 
+# find first 'h2' and get from it , parameter 'id'
 # print(content.find('h2').get('id'))
 
 
 # =find_by_search=====================================================================
-
 # find value , that start by 'd'
 # print(content.find(re.compile('^d')))
 
-# ======================================================================
+
+# =select=====================================================================
+# return 'li' chiled 'a',that 'title="Ed Krol"'
+print(content.select('li > a[title="Ed Krol"]'))
+
